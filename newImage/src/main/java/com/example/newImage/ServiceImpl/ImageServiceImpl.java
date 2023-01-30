@@ -18,7 +18,6 @@ public class ImageServiceImpl implements ImageService {
     @Override
     public ImageEntity saveImage(ImageDTO imageDTO) {
         ImageEntity imageEntity = new ImageEntity();
-        imageEntity.setId(imageDTO.getId());
         imageEntity.setName(imageDTO.getName());
         imageEntity.setImage(imageDTO.getImage());
         imageEntity.setDescription(imageDTO.getDescription());
@@ -31,9 +30,11 @@ public class ImageServiceImpl implements ImageService {
     }
 
     @Override
-    public void delete(Integer id){
-    imageRepo.deleteById(id);
+    public void delete(Integer id) {
+        imageRepo.deleteById(id);
+
     }
+
 
     @Override
     public ImageEntity updateById(Integer id ,ImageDTO imageDTO) {
